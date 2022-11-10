@@ -2,6 +2,8 @@
 import React ,{useState} from 'react'
 
 export default function Textarea(props) {
+    const[text,setText]= useState('');
+
     const handleUpClick=()=>{
         // console.log('button was clicked' + text);
         let newText=text.toUpperCase()
@@ -29,7 +31,7 @@ export default function Textarea(props) {
         // console.log('handleOnChange');
         setText(event.target.value);
     }
-    const[text,setText]= useState('');
+   
     return (
         <>
         <div className='container' style={{color: props.mode === 'dark'? 'white':'black'}}>
@@ -50,6 +52,6 @@ export default function Textarea(props) {
             <h3>Preview</h3>
             <p>{text.length>0?text:"Enter your text in the above textarea to preview here."}</p>
         </div>
-        </>
+        </> 
     )
 }
