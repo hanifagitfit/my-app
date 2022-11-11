@@ -1,15 +1,9 @@
 import './App.css';
-import About from './components/About'
 import { useState } from 'react';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import Textarea from './components/Textarea';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-  
-} from "react-router-dom";
+
 
 
 function App() {
@@ -48,29 +42,21 @@ function App() {
       // document.title='Textutils - Light mode';
     }
   }
- 
- 
+
+
   return (
     <>
-    <Router>
+      
         <Navbar title='Textutils' mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-         
-          <Routes>
-              
-            <Route  path="/"element={<Textarea heading='Enter the text to analyze' showAlert={showAlert} mode={mode} />}>
-            </Route>
-            
+           
+            <Textarea heading='Enter the text to analyze' showAlert={showAlert} mode={mode} />
+        
+          </div>
 
-            <Route  path="/about" element={<About mode={mode}/>}>
-              
-            </Route>
-          </Routes>
-        </div>
-       
-     </Router>
-    
+      
+
     </>
   );
 }
